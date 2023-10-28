@@ -1,0 +1,3 @@
+archbit Devos Jr
+
+aws s3 cp envio.txt s3://archbit-s3/ 

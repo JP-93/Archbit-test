@@ -1,0 +1,7 @@
+FROM nginx:alpine
+
+COPY ./html /usr/share/nginx/html
+
+#docker pull pedrobsouza/devops-jr-challenge:v1
+
+#docker run -d -p 8080:80 pedrobsouza/devops-jr-challenge:v1
