@@ -1,7 +1,9 @@
 FROM nginx:alpine
 
-COPY ./html /usr/share/nginx/html
+WORKDIR  /app
 
-#docker pull pedrobsouza/devops-jr-challenge:v1
+COPY ./html /app
 
-#docker run -d -p 8080:80 pedrobsouza/devops-jr-challenge:v1
+RUN cp /app/index.html /usr/share/nginx/html
+
+EXPOSE 80
