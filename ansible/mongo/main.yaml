@@ -1,0 +1,33 @@
+- hosts: all
+  become: true
+
+  tasks:
+  - name: Install aptitude using apt
+    apt:
+      name: aptitude
+      state: latest
+      update_cache: yes
+
+  - name: Import public key
+    apt_key:
+      url: 'https://www.mongodb.org/static/pgp/server-3.6.asc'
+      state: present
+
+  - name: Add repository
+    apt_repository:
+      filename: '/etc/apt/sources.list.d/mongodb-org-3.6.list'
+      repo: 'deb https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/3.6 multiverse'
+      state: present
+
+  - name: Install mongoDB
+    apt:
+      name: mongodb-org
+      state: present
+      update_cache: yes
+
+
+  - name: Ensure mongodb is running and and enabled to start automatically on reboots
+    service:
+      name: mongod
+      enabled: yes
+      state: started
