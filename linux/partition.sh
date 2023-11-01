@@ -19,7 +19,3 @@ sudo fdisk -l
 read -p "Select the partition to format: " PARTITION
 
 sudo mkfs .xfs -L media "$PARTITION"
-
-
-
-

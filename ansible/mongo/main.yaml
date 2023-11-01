@@ -10,13 +10,13 @@
 
   - name: Import public key
     apt_key:
-      url: 'https://www.mongodb.org/static/pgp/server-3.6.asc'
+      url: 'https://www.mongodb.org/static/pgp/server-4.2.asc'
       state: present
 
   - name: Add repository
     apt_repository:
-      filename: '/etc/apt/sources.list.d/mongodb-org-3.6.list'
-      repo: 'deb https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/3.6 multiverse'
+      filename: '/etc/apt/sources.list.d/mongodb-org-4.2.list'
+      repo: 'deb https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse'
       state: present
 
   - name: Install mongoDB

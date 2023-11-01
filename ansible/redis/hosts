@@ -1,2 +1,2 @@
 [http]
-ec2-3-80-229-12.compute-1.amazonaws.com ansible_user=ubuntu
+ec2-100-26-54-69.compute-1.amazonaws.com ansible_user=ubuntu
